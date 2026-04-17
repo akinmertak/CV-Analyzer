@@ -57,7 +57,8 @@ uvicorn main:app --reload
 
 Backend sunucusu http://localhost:8000 adresinde çalışmaya başlayacaktır.
 
-2. Frontend (Next.js) Kurulumu
+
+### 2. Frontend (Next.js) Kurulumu
 Bash
 # Frontend klasörüne girin
 cd cloud-cv-analyzer
@@ -74,4 +75,4 @@ Frontend sunucusu http://localhost:3000 adresinde çalışmaya başlayacaktır.
 👨‍💻 Geliştirici
 Akın Mert Ak
 
-GitHub: @akinmertak
+GitHub: akinmertak
