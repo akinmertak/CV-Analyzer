@@ -1,4 +1,4 @@
-# 🚀 Cloud CV Analyzer & Improvement Assistant
+# 🚀 CV Analyzer & Improvement Assistant
 
 Bu proje, adayların özgeçmişlerini (CV) saniyeler içinde analiz eden, ATS (Aday Takip Sistemi) standartlarına göre puanlayan ve yapay zeka destekli geri bildirimler sunan modern bir web uygulamasıdır. 
 
