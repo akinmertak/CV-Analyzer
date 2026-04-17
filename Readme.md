@@ -1,78 +1,124 @@
-# 🚀 CV Analyzer & Improvement Assistant
+# 🚀 Cloud CV Analyzer & Improvement Assistant
 
-Bu proje, adayların özgeçmişlerini (CV) saniyeler içinde analiz eden, ATS (Aday Takip Sistemi) standartlarına göre puanlayan ve yapay zeka destekli geri bildirimler sunan modern bir web uygulamasıdır. 
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq_Llama_3-F55036?style=for-the-badge&logo=groq&logoColor=white)
 
-Sistem, yüklenen PDF dosyalarını ayrıştırır ve **Groq LPU (Llama 3.3 70B)** altyapısını kullanarak ışık hızında, kişiselleştirilmiş bir CV geliştirme raporu sunar. Ayrıca kullanıcılar, hedefledikleri bir **İş İlanı** metnini sisteme girerek CV'lerinin o ilana ne kadar uygun olduğunu (Job Match Skoru) detaylı bir analizle görebilirler.
+## 📌 Proje Hakkında
+
+**Cloud CV Analyzer**, adayların CV’lerini saniyeler içinde analiz eden, ATS (Aday Takip Sistemi) uyumluluğunu ölçen ve yapay zeka destekli geliştirme önerileri sunan modern bir web uygulamasıdır.
+
+Sistem:
+- PDF CV’leri analiz eder  
+- ATS uyum skorunu hesaplar  
+- İş ilanına göre eşleşme (job match) yapar  
+- AI ile kişiselleştirilmiş geri bildirim üretir  
+
+⚡ Tüm analizler **Groq LPU (Llama 3.3 70B)** altyapısı ile ultra hızlı şekilde gerçekleştirilir.
+
+---
 
 ## ✨ Özellikler
 
-* **📄 Akıllı PDF Ayrıştırma:** CV'ler bellekte güvenli bir şekilde okunur ve metne dönüştürülür.
-* **⚡ Ultra Hızlı AI Analizi:** Groq API (Llama 3.3 70B) kullanılarak bekleme süresi olmadan anlık JSON tabanlı analiz üretilir.
-* **📊 Detaylı ATS Skoru:** Format, etki, sayısal veri ve anahtar kelime uyumuna göre alt metrikler hesaplanır.
-* **🎯 Job Match (İş İlanı Eşleşmesi):** Girilen iş ilanına göre özel uyum skoru ve eksik/fazla yetenek analizi.
-* **✅ İnteraktif Aksiyon Planı:** Adayın CV'sini geliştirmesi için yapay zeka tarafından oluşturulan "yapılacaklar" (checklist) listesi.
+- 📄 **Akıllı PDF Ayrıştırma**  
+  CV dosyaları güvenli şekilde okunur ve metne dönüştürülür.
 
-## 🛠️ Teknoloji Yığını (Tech Stack)
+- ⚡ **Gerçek Zamanlı AI Analizi**  
+  Groq API kullanılarak anlık ve yapılandırılmış (JSON) analiz yapılır.
 
-**Frontend:**
-* Next.js (App Router)
-* React & TypeScript
-* Tailwind CSS
-* Lucide React (İkonlar)
-* React Dropzone (Sürükle-Bırak dosya yükleme)
+- 📊 **ATS Skorlama Sistemi**  
+  - Format  
+  - Etki  
+  - Sayısal veri kullanımı  
+  - Anahtar kelime uyumu  
 
-**Backend:**
-* FastAPI (Python)
-* Uvicorn (ASGI Sunucu)
-* Groq API (`llama-3.3-70b-versatile` modeli)
-* `pdfplumber` (PDF metin çıkarma)
+- 🎯 **Job Match (İş Uyumu Analizi)**  
+  İş ilanına göre:
+  - Uyum skoru  
+  - Eksik yetenekler  
+  - Fazla / gereksiz içerik analizi  
 
-## ⚙️ Kurulum ve Çalıştırma (Local Development)
+- ✅ **Aksiyon Planı (Checklist)**  
+  CV’yi geliştirmek için yapılacaklar listesi sunulur.
 
-Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin.
+---
 
-### Ön Koşullar
-* Node.js (v18 veya üzeri)
-* Python (3.9 veya üzeri)
-* Ücretsiz bir [Groq API Key](https://console.groq.com/)
+## 🛠️ Teknoloji Yığını
 
-### 1. Backend (FastAPI) Kurulumu
+### Frontend
+- Next.js (App Router)
+- React & TypeScript
+- Tailwind CSS
+- React Dropzone
+- Lucide Icons
+
+### Backend
+- FastAPI (Python)
+- Uvicorn
+- Groq API (`llama-3.3-70b-versatile`)
+- pdfplumber
+- Pydantic
+
+---
+
+## ⚙️ Kurulum (Local Development)
+
+### 📌 Ön Koşullar
+
+- Node.js (v18+)
+- Python (3.9+)
+- Groq API Key → https://console.groq.com/
+
+---
+
+## 🔧 Backend Kurulumu
 
 ```bash
-# Backend klasörüne girin
 cd cv-analyzer-backend
 
-# Python sanal ortamını (virtual environment) oluşturun ve aktif edin
 python -m venv venv
-source venv/bin/activate  # Windows için: venv\Scripts\activate
+Ortamı aktif et:
 
-# Gerekli bağımlılıkları yükleyin
+Mac/Linux
+ source venv/bin/activate
+
+Windows
+ venv\Scripts\activate
+
+Bağımlılıkları yükle:
 pip install fastapi "uvicorn[standard]" python-multipart pdfplumber groq python-dotenv pydantic
 
-# .env dosyası oluşturun ve Groq API anahtarınızı ekleyin
-echo "GROQ_API_KEY=sizin_groq_api_anahtariniz" > .env
+.env oluştur:
+GROQ_API_KEY=your_api_key_here
 
-# Sunucuyu başlatın
+Backend’i başlat:
 uvicorn main:app --reload
 
-Backend sunucusu http://localhost:8000 adresinde çalışmaya başlayacaktır.
+➡️ Backend: http://localhost:8000
 
-
-### 2. Frontend (Next.js) Kurulumu
-Bash
-# Frontend klasörüne girin
+ 💻 Frontend Kurulumu
 cd cloud-cv-analyzer
 
-# Bağımlılıkları yükleyin
 npm install
-
-# Geliştirme sunucusunu başlatın
 npm run dev
 
-Frontend sunucusu http://localhost:3000 adresinde çalışmaya başlayacaktır.
+➡️ Frontend: http://localhost:3000
 
 
-👨‍💻 Geliştirici
-Akın Mert Ak
+### 📂 Proje Yapısı
+├── cv-analyzer-backend
+│   ├── main.py
+│   ├── services/
+│   └── utils/
+│
+├── cloud-cv-analyzer
+│   ├── app/
+│   ├── components/
+│   └── lib/
 
-GitHub: akinmertak
+## 👨‍💻 Geliştirici
+
+Akın Mert Ak\
+https://github.com/akinmertak

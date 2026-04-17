@@ -1,13 +1,13 @@
 # Node & Next.js
-cloud-cv-analyzer/node_modules/
-cloud-cv-analyzer/.next/
-cloud-cv-analyzer/out/
-cloud-cv-analyzer/build/
+node_modules/
+.next/
+out/
+build/
 
 # Python & FastAPI
-cv-analyzer-backend/venv/
-cv-analyzer-backend/__pycache__/
-cv-analyzer-backend/*.pyc
+venv/
+__pycache__/
+*.pyc
 
 # Ortam Değişkenleri (Gizli Tutulacaklar)
 .env
