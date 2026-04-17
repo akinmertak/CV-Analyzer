@@ -113,6 +113,7 @@ npm run dev
 ---
 
 ## 📂 Proje Yapısı
+``` bash
 ├── cv-analyzer-backend
 │   ├── main.py
 │   ├── services/
@@ -122,7 +123,7 @@ npm run dev
 │   ├── app/
 │   ├── components/
 │   └── lib/
-
+``` 
 ## 👨‍💻 Geliştirici
 
 Akın Mert Ak\
