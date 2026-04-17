@@ -77,7 +77,7 @@ Sistem:
 
 ```bash
 cd cv-analyzer-backend
-
+```
 python -m venv venv
 Ortamı aktif et:
 
@@ -98,16 +98,21 @@ uvicorn main:app --reload
 
 ➡️ Backend: http://localhost:8000
 
- 💻 Frontend Kurulumu
+---
+## 💻 Frontend Kurulumu
+```bash
+
 cd cloud-cv-analyzer
 
 npm install
 npm run dev
 
+```
 ➡️ Frontend: http://localhost:3000
 
+---
 
-### 📂 Proje Yapısı
+## 📂 Proje Yapısı
 ├── cv-analyzer-backend
 │   ├── main.py
 │   ├── services/
